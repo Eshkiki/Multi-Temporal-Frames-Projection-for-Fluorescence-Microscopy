@@ -66,7 +66,7 @@ Stages:
 ### Basic Run (Default Settings)
 
 ```bash
-python main_git.py
+python framesFusion.py
 ```
 
 This will:
@@ -83,7 +83,7 @@ This will:
 ### Example: Custom Dataset & Parameters (No Projection)
 
 ```bash
-python main_git.py   --data_path /test   --output_path ./outputs/run_01   --ext .avi .mp4   --frame_policy pad   --gamma_low 0.7   --gamma_high 1.3   --clahe_low_clip 1.0   --clahe_high_clip 3.0   --median_ksize 5   --bilateral_d 5   --bilateral_sigma_color 50   --bilateral_sigma_space 75   --nlmeans_h 12   --dtype float32
+python framesFusion.py   --data_path /test   --output_path ./outputs/run_01   --ext .avi .mp4   --frame_policy pad   --gamma_low 0.7   --gamma_high 1.3   --clahe_low_clip 1.0   --clahe_high_clip 3.0   --median_ksize 5   --bilateral_d 5   --bilateral_sigma_color 50   --bilateral_sigma_space 75   --nlmeans_h 12   --dtype float32
 ```
 
  
@@ -91,7 +91,7 @@ python main_git.py   --data_path /test   --output_path ./outputs/run_01   --ext 
 ### Example: Enable Projections (Projected Output Only)
 
 ```bash
-python main_git.py   --data_path /test   --output_path ./outputs/run_proj   --ext .avi .mp4   --frame_policy pad   --projection_mode projected_only   --enable_projection proj_max proj_mean proj_quantile   --quantile_q 0.75   --dtype uint8
+python framesFusion.py   --data_path /test   --output_path ./outputs/run_proj   --ext .avi .mp4   --frame_policy pad   --projection_mode projected_only   --enable_projection proj_max proj_mean proj_quantile   --quantile_q 0.75   --dtype uint8
 ```
 
  
@@ -99,7 +99,7 @@ python main_git.py   --data_path /test   --output_path ./outputs/run_proj   --ex
 ### Example: Store Both Full Videos & Projected Outputs
 
 ```bash
-python main_git.py   --data_path ./data   --output_path ./outputs/run_both   --projection_mode both   --enable_projection proj_max   --dtype uint8
+python framesFusion.py   --data_path ./data   --output_path ./outputs/run_both   --projection_mode both   --enable_projection proj_max   --dtype uint8
 ```
 
  
@@ -107,7 +107,7 @@ python main_git.py   --data_path ./data   --output_path ./outputs/run_both   --p
 ### Example: Full Preprocessing + All Projections (Most Complete Run)
 
 ```bash
-python main_git.py   --data_path /test   --output_path ./outputs/run_full_all   --ext .avi .mp4   --frame_policy pad   --max_videos 0    --gamma_low 0.7   --gamma_high 1.3   --clahe_low_clip 1.0   --clahe_low_grid 16   --clahe_high_clip 3.0   --clahe_high_grid 4   --median_ksize 5   --bilateral_d 5   --bilateral_sigma_color 50   --bilateral_sigma_space 75   --nlmeans_h 12   --nlmeans_template 3   --nlmeans_search 7   --projection_mode both   --enable_projection proj_sum proj_max proj_mean proj_std proj_argmax proj_quantile   --quantile_q 0.75   --dtype float32
+python framesFusion.py   --data_path /test   --output_path ./outputs/run_full_all   --ext .avi .mp4   --frame_policy pad   --max_videos 0    --gamma_low 0.7   --gamma_high 1.3   --clahe_low_clip 1.0   --clahe_low_grid 16   --clahe_high_clip 3.0   --clahe_high_grid 4   --median_ksize 5   --bilateral_d 5   --bilateral_sigma_color 50   --bilateral_sigma_space 75   --nlmeans_h 12   --nlmeans_template 3   --nlmeans_search 7   --projection_mode both   --enable_projection proj_sum proj_max proj_mean proj_std proj_argmax proj_quantile   --quantile_q 0.75   --dtype float32
 ```
  
  
