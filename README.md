@@ -2,7 +2,8 @@
 
 ## Overview
 
-This project provides a **video preprocessing pipeline builder** for large-scale computer vision experiments.
+This project provides a **video preprocessing pipeline builder** for large-scale computer vision experiments, as described in the study [[1](#1)].
+
 
 The script reads a directory of videos, converts all videos to **grayscale**, and automatically generates **multiple preprocessing pipelines** by combining different image processing operations (e.g. CLAHE, gamma correction, denoising).  
 Optionally, after preprocessing each video frame-by-frame, the script can apply a **temporal projection** across frames (e.g. **max**, **mean**, **sum**, **std**, **argmax**, **quantile**) to produce a single 2D image per video.
@@ -55,6 +56,8 @@ Stages:
   - Be readable by OpenCV
   - Have the same spatial resolution
   - Be compatible with the selected frame handling policy
+
+An example of input file from [[1](#1)] is available from the repository [[2](#2)].
 
 ##  Installation Requirements
 - **Python**: `>=3.9`
@@ -169,3 +172,18 @@ Valid projection names: `proj_sum`, `proj_max`, `proj_mean`, `proj_std`, `proj_a
 - **Global Manifest**: `pipelines_manifest_<timestamp>.json`
 
  
+## References
+
+[<a id="1">1</a>]
+Eshkiki, H., Costa, S., Mohammadpour, M., Tanhaei, F., George, C. H., & Caraffini, F. (2026). Multi-Temporal Frames Projection for Dynamic Processes Fusion in Fluorescence Microscopy. arXiv. [
+https://doi.org/10.48550/arXiv.2601.10392
+](
+https://doi.org/10.48550/arXiv.2601.10392
+).
+
+[<a id="2">2</a>] 
+Eshkiki, H., Costa, S., Mohammadpour, M., Tanhaei, F., George, C. H., & Caraffini, F. (2026). Supplementary Materials for "Multi-Temporal Frames Projection for Dynamic Processes Fusion in Fluorescence Microscopy". Zenodo. [https://doi.org/10.5281/zenodo.18185074](https://doi.org/10.5281/zenodo.18185074)
+
+
+---
+If you use the code in this repository or any material from [[2](#2)], please acknowledge the contributions presented in [[1](#1)] and [[2](#2)].
